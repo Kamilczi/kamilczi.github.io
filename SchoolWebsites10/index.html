@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G.S KIBILIZI</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script src="script.js" defer></script>
+  <style>
+    :root {
+      --neon-blue: #00f0ff;
+      --neon-purple: #d400ff;
+      --neon-green: #00ff9d;
+      --dark-space: #0a0a23;
+      --star-white: #f0f0ff;
+      --holo-glow: rgba(0, 240, 255, 0.15);
+    }
+    body {
+      background: linear-gradient(180deg, var(--dark-space) 0%, #1a1a3a 100%);
+      color: var(--star-white);
+      font-family: 'Exo 2', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+    }
+    nav {
+      background: rgba(10, 10, 35, 0.9);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 30px var(--holo-glow);
+      transition: transform 0.5s ease-in-out, opacity 0.5s;
+    }
+    nav.galaxy-active {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    nav a {
+      position: relative;
+      transition: color 0.3s, transform 0.3s, opacity 0.3s;
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    nav a.nav-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    nav a:hover {
+      color: var(--neon-blue);
+      text-shadow: 0 0 15px var(--neon-blue);
+      transform: scale(1.1);
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background: var(--neon-green);
+      transition: width 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .animate-neon {
+      animation: neon-glow 1.2s ease-in-out infinite alternate;
+    }
+    @keyframes neon-glow {
+      from { text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue); }
+      to { text-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue); }
+    }
+    .animate-starfield {
+      background: url('stars.jpg') repeat;
+      animation: starfield 50s linear infinite;
+    }
+    @keyframes starfield {
+      from { background-position: 0 0; }
+      to { background-position: -1000px -1000px; }
+    }
+    .holo-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
+      border: 1px solid var(--neon-green);
+      box-shadow: 0 0 25px var(--holo-glow);
+      transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    .holo-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, var(--neon-blue) 10%, transparent 40%);
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    .holo-card:hover::before {
+      opacity: 0.3;
+    }
+    .holo-card:hover {
+      box-shadow: 0 0 40px var(--neon-blue);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.15));
+    }
+    .holo-card.glow-pulse::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 2px solid var(--neon-green);
+      opacity: 0;
+      animation: glow-pulse 1.5s infinite;
+    }
+    @keyframes glow-pulse {
+      0% { opacity: 0; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.05); }
+      100% { opacity: 0; transform: scale(1.1); }
+    }
+    .typewriter {
+      overflow: hidden;
+      border-right: 3px solid var(--neon-green);
+      white-space: nowrap;
+      animation: blink-cursor 0.7s step-end infinite;
+    }
+    @keyframes blink-cursor {
+      50% { border-color: transparent; }
+    }
+    .parallax {
+      perspective: 1200px;
+      transform-style: preserve-3d;
+    }
+    .parallax-content {
+      transform: translateZ(30px) scale(0.97);
+      transition: transform 0.6s;
+    }
+    .form-input {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--neon-purple);
+      color: var(--star-white);
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+    .form-input:focus {
+      border-color: var(--neon-green);
+      box-shadow: 0 0 15px var(--neon-green);
+      transform: scale(1.02);
+    }
+    .btn-neon {
+      background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+      border: none;
+      box-shadow: 0 0 25px var(--holo-glow);
+      transition: all 0.4s;
+    }
+    .btn-neon:hover {
+      background: linear-gradient(45deg, var(--neon-blue), var(--neon-green));
+      box-shadow: 0 0 35px var(--neon-green);
+      transform: scale(1.1) rotate(2deg);
+    }
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(80px) rotateX(10deg);
+      transition: opacity 0.9s, transform 0.9s, filter 0.9s;
+    }
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+      filter: drop-shadow(0 0 20px var(--holo-glow));
+    }
+    .galaxy-transition {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, var(--neon-blue) 10%, transparent 50%);
+      opacity: 0;
+      animation: galaxy-pulse 3s ease-out;
+      pointer-events: none;
+    }
+    @keyframes galaxy-pulse {
+      0% { opacity: 0.3; transform: scale(0.5); }
+      100% { opacity: 0; transform: scale(2); }
+    }
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .cursor-trail {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: var(--neon-blue);
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow: 0 0 15px var(--neon-blue);
+      transition: transform 0.2s, opacity 0.5s;
+      z-index: 1000;
+      opacity: 0;
+    }
+    .cursor-trail.active {
+      opacity: 0.7;
+    }
+    .hud-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0.15;
+      background: radial-gradient(circle, var(--holo-glow) 20%, transparent 70%);
+    }
+    #voice-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 50;
+      background: var(--neon-purple);
+      color: var(--star-white);
+      padding: 12px 24px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px var(--holo-glow);
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    #voice-control:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 20px var(--neon-green);
+    }
+    #voice-control.active {
+      background: var(--neon-green);
+    }
+
+    /* Form submission animation */
+#contact-form.submitting .form-input,
+#contact-form.submitting .btn-neon {
+  animation: form-pulse 0.5s ease-in-out infinite alternate;
+}
+@keyframes form-pulse {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.2); }
+}
+
+/* Holographic spinner */
+.holo-spinner {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border: 3px solid transparent;
+  border-top: 3px solid var(--neon-green);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Particle burst transition */
+.particle-burst {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  z-index: 5;
+}
+.particle-burst.active::before,
+.particle-burst.active::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--neon-blue);
+  border-radius: 50%;
+  animation: burst 1s ease-out forwards;
+}
+.particle-burst.active::before {
+  top: 20%;
+  left: 30%;
+  animation-delay: 0.1s;
+}
+.particle-burst.active::after {
+  top: 70%;
+  left: 60%;
+  animation-delay: 0.2s;
+}
+@keyframes burst {
+  0% { opacity: 0.7; transform: scale(0); }
+  100% { opacity: 0; transform: scale(3) translate(50px, -50px); }
+}
+
+/* Notification */
+#notification.show {
+  display: block;
+  animation: slide-in 0.5s ease-out, fade-out 0.5s ease-out 3s forwards;
+}
+@keyframes slide-in {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fade-out {
+  to { opacity: 0; transform: translateX(100%); }
+}
+  </style>
+</head>
+<body class="relative">
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+  <!-- Starfield Background -->
+  <div class="fixed inset-0 animate-starfield z-0"></div>
+  <!-- HUD Overlay -->
+  <div class="hud-overlay"></div>
+  <!-- Cursor Trail -->
+  <div class="cursor-trail"></div>
+
+  <!-- Navigation Bar -->
+  <nav id="main-nav" class="fixed w-full top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-bold animate-neon">G.S KIBILIZI</h1>
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="var(--neon-green)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      <ul id="nav-menu" class="hidden md:flex space-x-8">
+        <li><a href="#home" class="text-lg">Home</a></li>
+        <li><a href="#about" class="text-lg">About Us</a></li>
+        <li><a href="#statistics" class="text-lg">Statistics</a></li>
+        <li><a href="#map" class="text-lg">Map</a></li>
+        <li><a href="#gallery" class="text-lg">Gallery</a></li>
+        <li><a href="#contact" class="text-lg">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="h-screen flex items-center justify-center text-center relative z-10 parallax">
+    <div class="parallax-content holo-card p-16" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare>
+      <h1 class="text-6xl font-bold animate-neon mb-6" id="typewriter-heading"></h1>
+      <p class="text-xl max-w-2xl mx-auto" id="typewriter-paragraph"></p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 relative z-10 scroll-reveal">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+      <img src="photo10.jpg" alt="G.S KIBILIZI Campus" class="w-full md:w-1/2 rounded-lg holo-card glow-pulse" data-tilt data-tilt-max="10" data-tilt-speed="300">
+      <div class="flex-1 holo-card p-8" data-tilt data-tilt-max="10" data-tilt-speed="300">
+        <h2 class="text-4xl font-bold mb-6 animate-neon text-center md:text-left">About G.S KIBILIZI</h2>
+        <p class="text-lg">Located in Gisagara, Rwanda, G.S KIBILIZI is a beacon of education in the region. Our modern facilities, dedicated teaching staff, and vibrant learning environment empower students to achieve academic and personal excellence.</p>
+      </div>
+      <div class="galaxy-transition"></div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section id="statistics" class="py-24 relative z-10 scroll-reveal">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-12 text-center animate-neon">School Metrics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="holo-card p-10 text-center" data-tilt data-tilt-max="10" data-tilt-speed="300">
+          <h3 class="text-2xl font-semibold mb-4">Students</h3>
+          <p class="text-3xl font-bold">350</p>
+        </div>
+        <div class="holo-card p-10 text-center" data-tilt data-tilt-max="10" data-tilt-speed="300">
+          <h3 class="text-2xl font-semibold mb-4">Teachers</h3>
+          <p class="text-3xl font-bold">20</p>
+        </div>
+        <div class="holo-card p-10 text-center" data-tilt data-tilt-max="10" data-tilt-speed="300">
+          <h3 class="text-2xl font-semibold mb-4">Support Staff</h3>
+          <p class="text-3xl font-bold">8</p>
+        </div>
+      </div>
+      <div class="galaxy-transition"></div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section id="map" class="py-24 relative z-10 scroll-reveal">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-12 text-center animate-neon">Our Location</h2>
+      <div class="holo-card w-full h-96 rounded-lg overflow-hidden" data-tilt data-tilt-max="8" data-tilt-speed="300">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.436645093178!2d29.931788614757057!3d-2.357768998190189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMjEnMjguMCJTIDI5wrA1NSc1NS4yIkU!5e0!3m2!1sen!2spl!4v1744023800200!5m2!1sen!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="galaxy-transition"></div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-24 relative z-10 scroll-reveal">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-12 text-center animate-neon">School Gallery</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <img src="photo2.jpg" alt="School Building" class="w-full h-72 object-cover rounded-lg holo-card glow-pulse cursor-pointer" data-tilt data-tilt-max="10" data-tilt-speed="300">
+        <img src="photo3.jpg" alt="School Classes" class="w-full h-72 object-cover rounded-lg holo-card glow-pulse cursor-pointer" data-tilt data-tilt-max="10" data-tilt-speed="300">
+        <img src="photo4.jpg" alt="School Grounds" class="w-full h-72 object-cover rounded-lg holo-card glow-pulse cursor-pointer" data-tilt data-tilt-max="10" data-tilt-speed="300">
+        <img src="photo5.jpg" alt="School Class" class="w-full h-72 object-cover rounded-lg holo-card glow-pulse cursor-pointer" data-tilt data-tilt-max="10" data-tilt-speed="300">
+        <img src="photo6.jpg" alt="School Grounds" class="w-full h-72 object-cover rounded-lg holo-card glow-pulse cursor-pointer" data-tilt data-tilt-max="10" data-tilt-speed="300">
+        <img src="photo7.jpg" alt="School Activities" class="w-full h-72 object-cover rounded-lg holo-card glow-pulse cursor-pointer" data-tilt data-tilt-max="10" data-tilt-speed="300">
+        <img src="photo8.jpg" alt="School Hallway" class="w-full h-72 object-cover rounded-lg holo-card glow-pulse cursor-pointer" data-tilt data-tilt-max="10" data-tilt-speed="300">
+        <img src="photo11.jpg" alt="School Labs" class="w-full h-72 object-cover rounded-lg holo-card glow-pulse cursor-pointer" data-tilt data-tilt-max="10" data-tilt-speed="300">
+      
+      </div>
+      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" class="holo-card glow-pulse">
+      </div>
+      <div class="galaxy-transition"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+<section id="contact" class="py-24 relative z-10 scroll-reveal">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold mb-12 text-center animate-neon">Contact Us</h2>
+    <div class="flex flex-col md:flex-row gap-12">
+      <div class="md:w-1/2">
+        <div class="grid grid-cols-1 gap-8">
+          <div class="holo-card p-10 text-center" data-tilt data-tilt-max="10" data-tilt-speed="300">
+            <h3 class="text-xl font-semibold mb-4">Email</h3>
+            <p>gsgisagara@gmail.com</p>
+          </div>
+          <div class="holo-card p-10 text-center" data-tilt data-tilt-max="10" data-tilt-speed="300">
+            <h3 class="text-xl font-semibold mb-4">Phone</h3>
+            <p>+250 788123456</p>
+          </div>
+          <div class="holo-card p-10 text-center" data-tilt data-tilt-max="10" data-tilt-speed="300">
+            <h3 class="text-xl font-semibold mb-4">Address</h3>
+            <p>Gisagara, Rwanda</p>
+          </div>
+        </div>
+      </div>
+      <div class="md:w-1/2 max-w-lg mx-auto">
+        <form id="contact-form" class="holo-card p-8" data-tilt data-tilt-max="10" data-tilt-speed="300">
+          <div>
+            <label for="name" class="block text-sm font-medium">Name</label>
+            <input type="text" id="name" name="name" required class="w-full p-3 form-input rounded-lg">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium">Email</label>
+            <input type="email" id="email" name="email" required class="w-full p-3 form-input rounded-lg">
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium">How can we assist?</label>
+            <textarea id="message" name="message" required class="w-full p-3 form-input rounded-lg h-32"></textarea>
+          </div>
+          <div class="flex items-center">
+            <input type="checkbox" id="terms" name="terms" required class="mr-2 form-input">
+            <label for="terms" class="text-sm">I accept the Terms of Service</label>
+          </div>
+          <button type="submit" id="contact-submit" class="w-full btn-neon text-white p-3 rounded-lg relative">
+            Send Message
+            <span class="holo-spinner hidden"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="galaxy-transition"></div>
+  </div>
+</section>
+
+<!-- Notification -->
+<div id="notification" class="fixed top-4 right-4 z-50 hidden p-4 rounded-lg bg-black bg-opacity-80 text-star-white animate-neon"></div>
+  <!-- Footer Section -->
+  <footer class="bg-black bg-opacity-90 py-8 relative z-10">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm">© 2025 G.S KIBILIZI, Gisagara, Rwanda. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Voice Control Button -->
+  <div id="voice-control" class="animate-neon">Voice Command</div>
+
+  <!-- Audio for Typewriter Effect -->
+  <audio id="typewriter-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+</body>
+</html>
