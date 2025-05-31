@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piotr Siegoczyński - Mistrz Kickboxingu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #e6e6e6;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: #e6e6e6;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0 1.5rem;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff3d00;
+        }
+
+        section {
+            padding: 120px 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        #home{
+            max-width: 100%;
+        }
+        h1, h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        h1 {
+            font-size: 5rem;
+            text-align: center;
+            background: linear-gradient(to right, #ff3d00, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 3rem;
+            background: linear-gradient(to right, #ff3d00, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            background: url('hero.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+            z-index: 1;
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 3rem 5rem;
+            border-radius: 15px;
+            z-index: 2;
+            transform: translateY(0);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 61, 0, 0.7);
+        }
+
+        .achievements-grid, .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .achievement-card, .gallery-item {
+            background: linear-gradient(145deg, #222, #333);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before, .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #ff3d00, #ffd700);
+            transition: height 0.3s ease;
+        }
+
+        .achievement-card:hover::before, .gallery-item:hover::before {
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .achievement-card:hover, .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(255, 61, 0, 0.6);
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+
+        .offer-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .offer-list li {
+            background: linear-gradient(145deg, #222, #333);
+            margin: 1rem 0;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.4s ease;
+        }
+
+        .offer-list li:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(255, 61, 0, 0.6);
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .media-card {
+            background: linear-gradient(145deg, #222, #333);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.4s ease;
+        }
+
+        .media-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(255, 61, 0, 0.6);
+        }
+
+        .media-card a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .media-card a:hover {
+            color: #ff3d00;
+        }
+
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #222, #333);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: 2px solid #ff3d00;
+            border-radius: 10px;
+            background: #333;
+            color: #e6e6e6;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #ffd700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            outline: none;
+        }
+
+        .contact-form button {
+            background: #ff3d00;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #ffd700;
+            color: #1a1a1a;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+        }
+
+        footer {
+            background: linear-gradient(145deg, #1a1a1a, #222);
+            color: #e6e6e6;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+            }
+
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content {
+                padding: 2rem 3rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            nav a {
+                margin: 0 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">O mnie</a>
+            <a href="#achievements">Osiągnięcia</a>
+            <a href="#gallery">Galeria</a>
+            <a href="#offer">Oferta</a>
+            <a href="#media">Media</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="hero-content">
+            <h1>Piotr Siegoczyński</h1>
+            <p>Pierwszy Polski Mistrz Świata w Kickboxingu</p>
+        </div>
+    </section>
+
+    <section id="about" data-aos="fade-up" data-aos-duration="800">
+        <h2 data-aos="fade-right">O mnie</h2>
+        <p>Od 1980 roku moje życie kręci się wokół kickboxingu – to pasja, która ukształtowała mnie jako sportowca, trenera i człowieka. Wszystko zaczęło się, gdy jako młody chłopak postawiłem pierwsze kroki na macie, a miłość do tej dyscypliny tylko rosła z każdym treningiem. W 1985 roku w Budapeszcie osiągnąłem coś, co na zawsze zapisało się w historii polskiego sportu – zdobyłem tytuł pierwszego polskiego Mistrza Świata w kickboxingu. To był moment, który do dziś wspominam z dumą i wzruszeniem.
+Moja sportowa droga była pełna wyzwań i triumfów. Trzykrotnie stawałem na najwyższym podium Mistrzostw Świata seniorów, a później, już jako weteran w kategorii 40-50 lat, zdobyłem kolejne trzy tytuły Mistrza Świata. Do tego dołożyłem pięć złotych medali Mistrzostw Europy seniorów oraz dwa tytuły Mistrza Europy weteranów. Dwukrotnie byłem też wicemistrzem świata, co nauczyło mnie, że każda walka, nawet ta zakończona porażką, jest lekcją i krokiem do przodu. Startowałem w różnych formułach kickboxingu – od pełnokontaktowego full contact, przez dynamiczne pointfighting, light contact, aż po kick light. Nie ograniczałem się tylko do kickboxingu – z sukcesami próbowałem swoich sił w Savate, Karate, Taekwondo WTF i Sandzie, co pozwoliło mi lepiej zrozumieć sztukę walki i poszerzyć moje umiejętności.
+Sport to jednak nie tylko medale, ale też praca na rzecz innych. W latach 2006-2010 miałem zaszczyt pełnić funkcję wiceprezesa Polskiego Związku Kickboxingu, gdzie mogłem wpływać na rozwój tej dyscypliny w Polsce. Od 1997 roku jestem trenerem kadry narodowej kickboxingu, co daje mi ogromną satysfakcję – pomaganie młodym zawodnikom w osiąganiu ich marzeń to coś, co napędza mnie każdego dnia. Prowadzę również treningi w KS Piaseczno oraz w moim ukochanym klubie X Fight, gdzie zarażam innych pasją do sportu i przekazuję doświadczenie zdobyte przez lata. Posiadam 5. stopień mistrzowski, co jest dla mnie nie tylko wyróżnieniem, ale i potwierdzeniem, że ciężka praca i zaangażowanie przynoszą efekty.
+Kickboxing to dla mnie sposób na życie – uczy dyscypliny, pokory i wytrwałości. Każdy cios, każda walka i każdy trening to fragment mojej historii, którą z radością dzielę się z innymi.
+
+</p>
+    </section>
+
+    <section id="achievements" data-aos="fade-up" data-aos-duration="800">
+        <h2 data-aos="fade-right">Osiągnięcia</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card" data-aos="flip-left" data-aos-delay="100">
+                <h3>Pierwszy Mistrz Świata</h3>
+                <p>1985, Budapeszt – pierwszy polski Mistrz Świata w kickboxingu (semi-contact, -57 kg).</p>
+            </div>
+            <div class="achievement-card" data-aos="flip-left" data-aos-delay="200">
+                <h3>6-krotny Mistrz Świata</h3>
+                <p>Trzykrotny Mistrz Świata seniorów oraz trzykrotny Mistrz Świata weteranów (40-50 lat).</p>
+            </div>
+            <div class="achievement-card" data-aos="flip-left" data-aos-delay="300">
+                <h3>7-krotny Mistrz Europy</h3>
+                <p>Pięciokrotny Mistrz Europy seniorów oraz dwukrotny Mistrz Europy weteranów.</p>
+            </div>
+            <div class="achievement-card" data-aos="flip-left" data-aos-delay="400">
+                <h3>Zawodowe Sukcesy</h3>
+                <p>W latach 1991–1994 walczył zawodowo w formule full contact, pokonując m.in. Andre Sabatie i Marko Markova.</p>
+            </div>
+            <div class="achievement-card" data-aos="flip-left" data-aos-delay="400">
+                <h3>Wiceprezes</h3>
+                <p>W latach 2006-2010 wiceprezes Polskiego Związku Kick-Boxingu</p>
+            </div>
+            
+             <div class="achievement-card" data-aos="flip-left" data-aos-delay="400">
+                <h3>Trener</h3>
+                <p>Spełniony trener, założyciel i właściciel w Kick-Center.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" data-aos="fade-up" data-aos-duration="800">
+        <h2 data-aos="fade-right">Galeria</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                <img src="photo3.jpg" alt="Piotr w akcji">
+                <p>Trening Piotra, Warszawa</p>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                <img src="photo2.jpg" alt="Ceremonia wręczenia medalu">
+                <p>Czasy młodości</p>
+            </div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                <img src="photo4.jpg" alt="Trening w Kick Center">
+                <p>Piotr Siegoczyński w walce</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="offer" data-aos="fade-up" data-aos-duration="800">
+        <h2 data-aos="fade-right">Oferta</h2>
+        <ul class="offer-list">
+            <li data-aos="fade-up" data-aos-delay="100"><strong>Treningi grupowe</strong>: Kickboxing, K-1, boks dla dorosłych, młodzieży i dzieci (od 9 lat).</li>
+            <li data-aos="fade-up" data-aos-delay="200"><strong>Treningi personalne</strong>: Indywidualne sesje z Piotrem Siegoczyńskim.</li>
+            <li data-aos="fade-up" data-aos-delay="300"><strong>Zajęcia dla kobiet</strong>: Aerokickboxing i fitness z elementami sztuk walki.</li>
+            <li data-aos="fade-up" data-aos-delay="400"><strong>Obozy sportowe</strong>: Letnie i zimowe obozy kickboxingu w Pułtusku i nad Zalewem Solińskim.</li>
+            <li data-aos="fade-up" data-aos-delay="500"><strong>Seminaria i warsztaty</strong>: Szkolenia dla trenerów i zawodników.</li>
+        </ul>
+    </section>
+
+    <section id="media" data-aos="fade-up" data-aos-duration="800">
+        <h2 data-aos="fade-right">Media</h2>
+        <div class="media-grid">
+            <div class="media-card" data-aos="flip-right" data-aos-delay="100">
+                <h3>Wywiad dla PZKb</h3>
+                <p>Wywiad z Piotrem Siegoczyńskim, Prezesem Polskiego Związku Kickboxingu, 2022.</p>
+                <a href="https://pzkickboxing.pl" target="_blank">Przeczytaj</a>
+            </div>
+            <div class="media-card" data-aos="flip-right" data-aos-delay="200">
+                <h3>Gość Życia</h3>
+                <p>Występ w programie Artura Roli, Życie Powiatu na Mazowszu, 2019.</p>
+                <a href="https://www.zyciepw.pl" target="_blank">Obejrzyj</a>
+            </div>
+            <div class="media-card" data-aos="flip-right" data-aos-delay="300">
+                <h3>Martial Sports Blog</h3>
+                <p>Artykuł o polskim kickboxingu, 2020.</p>
+                <a href="https://www.martialsports.pl" target="_blank">Przeczytaj</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" data-aos="fade-up" data-aos-duration="800">
+        <h2 data-aos="fade-right">Kontakt</h2>
+        <div class="contact-form" data-aos="zoom-in">
+            <form>
+                <input type="text" placeholder="Imię i nazwisko" required>
+                <input type="email" placeholder="E-mail" required>
+                <textarea placeholder="Wiadomość" rows="5" required></textarea>
+                <button type="submit">Wyślij</button>
+            </form>
+        </div>
+        <p data-aos="fade-up" data-aos-delay="200">Kontakt: Piotr Siegoczyński<br>
+        Telefon: 602-865-788<br>
+        E-mail: kontakt.kickcenter@gmail.com<br>
+        Adres: ul. Wokalna 1, Warszawa (przy metrze Ursynów)</p>
+    </section>
+
+    <footer data-aos="fade-up" data-aos-duration="800">
+        <p>© 2025 Piotr Siegoczyński. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Parallax effect for hero section
+            window.addEventListener('scroll', () => {
+                const hero = document.querySelector('.hero');
+                const scrollPosition = window.pageYOffset;
+                hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+            });
+        });
+    </script>
+</body>
+</html>
