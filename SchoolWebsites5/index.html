@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GS KATARARA</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="scripts.js" defer></script>
+  <style>
+    .animate-fade-in {
+      animation: fade-in 1s ease-in forwards;
+    }
+    .animate-slide-in {
+      animation: slide-in 0.5s ease-in forwards;
+    }
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slide-in {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+    nav {
+      background-color: #f5f5dc !important; /* Ensure solid beige background */
+    }
+  </style>
+</head>
+<body class="font-sans bg-beige-100">
+  <!-- Navigation Bar -->
+  <nav class="bg-beige-200 text-gray-800 fixed w-full top-0 z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold opacity-0 animate-fade-in">GS KATARARA</h1>
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      <ul id="nav-menu" class="hidden md:flex space-x-6">
+        <li class="opacity-0 animate-slide-in" style="animation-delay: 0.1s;"><a href="#home" class="hover:text-gray-600 transition">Home</a></li>
+        <li class="opacity-0 animate-slide-in" style="animation-delay: 0.2s;"><a href="#about" class="hover:text-gray-600 transition">About Us</a></li>
+        <li class="opacity-0 animate-slide-in" style="animation-delay: 0.3s;"><a href="#statistics" class="hover:text-gray-600 transition">Statistics</a></li>
+        <li class="opacity-0 animate-slide-in" style="animation-delay: 0.4s;"><a href="#map" class="hover:text-gray-600 transition">Map</a></li>
+        <li class="opacity-0 animate-slide-in" style="animation-delay: 0.5s;"><a href="#gallery" class="hover:text-gray-600 transition">Gallery</a></li>
+        <li class="opacity-0 animate-slide-in" style="animation-delay: 0.6s;"><a href="#contact" class="hover:text-gray-600 transition">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-white" style="background-image: url('photo1.jpg')">
+    <div class="bg-black bg-opacity-50 p-10 rounded-lg text-center">
+      <h1 class="text-5xl font-bold mb-4 opacity-0 animate-fade-in" style="animation-delay: 0.2s;">Welcome to GS KATARARA</h1>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+      <img src="photo10.jpg" alt="GS KATARARA" class="w-full md:w-1/2 rounded-lg shadow-lg">
+      <div class="flex-1">
+        <h2 class="text-3xl font-bold mb-4 text-center md:text-left">About GS KATARARA</h2>
+        <p class="text-lg text-gray-700">GS KATARARA, located in Nyanza District, Southern Province, Rwanda (school code: 210804), is a distinguished Groupe Scolaire committed to providing quality education to both primary and secondary students. Situated in the heart of Nyanza, our school fosters a nurturing and inclusive environment that promotes academic excellence, critical thinking, and personal development. Our dedicated faculty delivers a robust curriculum aligned with Rwanda's national education standards, preparing students for future academic and professional success. Equipped with modern facilities, including science laboratories, a library, and sports fields, GS KATARARA supports a holistic educational experience. We emphasize values such as discipline, respect, and community involvement, aiming to shape our students into responsible and engaged citizens of Rwanda and beyond.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section id="statistics" class="py-16 bg-beige-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Statistics</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition">
+          <h3 class="text-xl font-semibold mb-2">Students</h3>
+          <p class="text-2xl font-bold">300</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition">
+          <h3 class="text-xl font-semibold mb-2">Teachers</h3>
+          <p class="text-2xl font-bold">15</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition">
+          <h3 class="text-xl font-semibold mb-2">Support Staff</h3>
+          <p class="text-2xl font-bold">6</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section id="map" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Location</h2>
+      <div class="w-full h-96 rounded-lg overflow-hidden shadow-lg">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.4598589815528!2d29.744997973675424!3d-2.351049197628469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c33f9bd742cb5f%3A0xe0e26a066a9c3ad3!2sGroupe%20Scolaire%20Nyanza%20A!5e0!3m2!1sen!2spl!4v1744023800200!5m2!1sen!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 bg-beige-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Gallery</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <img src="photo2.jpg" alt="School Building" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo3.jpg" alt="School Classes" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo4.jpg" alt="School Parking" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo5.jpg" alt="School Class" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo6.jpg" alt="School Grounds" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo7.jpg" alt="School Bus" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo8.jpg" alt="School Hallway" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo11.jpg" alt="School Labs" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo12.jpg" alt="School Library" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+      </div>
+      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-1/2">
+          <div class="grid grid-cols-1 gap-6 mb-8">
+            <div class="bg-beige-200 p-6 rounded-lg shadow-lg text-center">
+              <h3 class="text-xl font-semibold mb-2">Email</h3>
+              <p class="text-gray-700">gsnyagasozinyanza@gmail.com</p>
+            </div>
+            <div class="bg-beige-200 p-6 rounded-lg shadow-lg text-center">
+              <h3 class="text-xl font-semibold mb-2">Phone</h3>
+              <p class="text-gray-700">+256 788625950 / 783666493</p>
+            </div>
+            <div class="bg-beige-200 p-6 rounded-lg shadow-lg text-center">
+              <h3 class="text-xl font-semibold mb-2">Address</h3>
+              <p class="text-gray-700">Nyanza, 210713, Rwanda</p>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2 max-w-lg mx-auto">
+          <div class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+              <input type="text" id="name" name="name" required class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-beige-500">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+              <input type="email" id="email" name="email" required class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-beige-500">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">How can we help?</label>
+              <textarea id="message" name="message" required class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-beige-500"></textarea>
+            </div>
+            <div class="flex items-center">
+              <input type="checkbox" id="terms" name="terms" required class="mr-2">
+              <label for="terms" class="text-sm text-gray-700">I agree to the Terms & Conditions</label>
+            </div>
+            <button id="contact-submit" class="w-full bg-beige-600 text-white p-2 rounded-lg hover:bg-beige-700 transition">Send a request</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-beige-200 text-gray-800 py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p>© 2025 G.S KATARARA, Nyanza, 210804. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
