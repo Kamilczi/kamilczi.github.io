@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E.S RWAMIKO</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a1a1a, #4b0000);
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Bangers', cursive;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    nav {
+      background: #000;
+      border-bottom: 3px solid #ffd700;
+    }
+    .nav-link {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ffd700;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #ff4500;
+    }
+    .animate-bounce-in {
+      animation: bounce-in 0.8s ease-in-out forwards;
+    }
+    @keyframes bounce-in {
+      0% { opacity: 0; transform: scale(0.8); }
+      60% { opacity: 0.7; transform: scale(1.05); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .section-bg {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    .card {
+      background: #222;
+      border: 2px solid #ffd700;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(255, 215, 0, 0.5);
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 3px solid #ffd700;
+      border-radius: 8px;
+    }
+    button, input, textarea {
+      background: #222;
+      border: 2px solid #ffd700;
+      color: #fff;
+      border-radius: 8px;
+    }
+    button:hover {
+      background: #ff4500;
+      border-color: #ff4500;
+    }
+    footer {
+      background: #000;
+      border-top: 3px solid #ffd700;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="fixed w-full top-0 z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-3xl opacity-0 animate-bounce-in">E.S RWAMIKO</h1>
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="#ffd700" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      <ul id="nav-menu" class="hidden md:flex space-x-6">
+        <li class="opacity-0 animate-bounce-in" style="animation-delay: 0.1s;"><a href="#home" class="nav-link">Home</a></li>
+        <li class="opacity-0 animate-bounce-in" style="animation-delay: 0.2s;"><a href="#about" class="nav-link">About Us</a></li>
+        <li class="opacity-0 animate-bounce-in" style="animation-delay: 0.3s;"><a href="#statistics" class="nav-link">Stats</a></li>
+        <li class="opacity-0 animate-bounce-in" style="animation-delay: 0.4s;"><a href="#map" class="nav-link">Map</a></li>
+        <li class="opacity-0 animate-bounce-in" style="animation-delay: 0.5s;"><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li class="opacity-0 animate-bounce-in" style="animation-delay: 0.6s;"><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-white" style="background-image: url('photo.jpg')">
+    <div class="section-bg text-center">
+      <h1 class="text-5xl md:text-6xl mb-4 opacity-0 animate-bounce-in">Welcome to E.S RWAMIKO</h1>
+      <p class="text-xl">The spot where knowledge meets swagger!</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16">
+    <div class="container mx-auto px-4 section-bg">
+      <h2 class="text-4xl mb-8 text-center">About E.S RWAMIKO</h2>
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <img src="photo10.jpg" alt="E.S RWAMIKO" class="w-full md:w-1/2 rounded-lg card">
+        <div class="flex-1">
+          <p class="text-lg">Yo, E.S RWAMIKO in Gisagara, 220703, is the real deal! We’re a top-tier school servin’ up premium education with a side of style. Our vibe? Dynamic, inclusive, and all about helpin’ students shine—mentally, socially, and emotionally. Our squad of dedicated teachers brings a fire curriculum to prep you for whatever’s next. We’re big on discipline, integrity, and community vibes. With dope facilities like high-tech science labs, a stacked library, and sports grounds that slap, we got you covered for academics and extracurriculars. Our mission? Empowerin’ students to unlock their full potential and step up as global players with heart.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section id="statistics" class="py-16">
+    <div class="container mx-auto px-4 section-bg">
+      <h2 class="text-4xl mb-8 text-center">Stats</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card p-6 text-center">
+          <h3 class="text-2xl mb-2">Students</h3>
+          <p class="text-3xl font-bold">300</p>
+        </div>
+        <div class="card p-6 text-center">
+          <h3 class="text-2xl mb-2">Teachers</h3>
+          <p class="text-3xl font-bold">15</p>
+        </div>
+        <div class="card p-6 text-center">
+          <h3 class="text-2xl mb-2">Crew</h3>
+          <p class="text-3xl font-bold">6</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section id="map" class="py-16">
+    <div class="container mx-auto px-4 section-bg">
+      <h2 class="text-4xl mb-8 text-center">Where We At</h2>
+      <div class="w-full h-96 rounded-lg overflow-hidden card">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.4598589815528!2d29.744997973675424!3d-2.351049197628469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c33f9bd742cb5f%3A0xe0e26a066a9c3ad3!2sGroupe%20Scolaire%20Nyanza%20A!5e0!3m2!1sen!2spl!4v1744023800200!5m2!1sen!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16">
+    <div class="container mx-auto px-4 section-bg">
+      <h2 class="text-4xl mb-8 text-center">Our Vibe</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <img src="photo2.jpg" alt="School Building" class="w-full h-48 object-cover rounded-lg card hover:opacity-90 cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo3.jpg" alt="School Classes" class="w-full h-48 object-cover rounded-lg card hover:opacity-90 cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo4.jpg" alt="School Parking" class="w-full h-48 object-cover rounded-lg card hover:opacity-90 cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo5.jpg" alt="School Class" class="w-full h-48 object-cover rounded-lg card hover:opacity-90 cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo6.jpg" alt="School Grounds" class="w-full h-48 object-cover rounded-lg card hover:opacity-90 cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo7.jpg" alt="School Bus" class="w-full h-48 object-cover rounded-lg card hover:opacity-90 cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo8.jpg" alt="School Hallway" class="w-full h-48 object-cover rounded-lg card hover:opacity-90 cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo11.jpg" alt="School Labs" class="w-full h-48 object-cover rounded-lg card hover:opacity-90 cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo12.jpg" alt="School Library" class="w-full h-48 object-cover rounded-lg card hover:opacity-90 cursor-pointer" onclick="openLightbox(this.src)">
+      </div>
+      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16">
+    <div class="container mx-auto px-4 section-bg">
+      <h2 class="text-4xl mb-8 text-center">Holler at Us</h2>
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-1/2">
+          <div class="grid grid-cols-1 gap-6 mb-8">
+            <div class="card p-6 text-center">
+              <h3 class="text-xl mb-2">Email</h3>
+              <p>esrwamiko@gmail.com</p>
+            </div>
+            <div class="card p-6 text-center">
+              <h3 class="text-xl mb-2">Phone</h3>
+              <p>+250 12345678</p>
+            </div>
+            <div class="card p-6 text-center">
+              <h3 class="text-xl mb-2">Spot</h3>
+              <p>Gisagara, 220703, Rwanda</p>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2 max-w-lg mx-auto">
+          <div class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm">Name</label>
+              <input type="text" id="name" name="name" required class="w-full p-2">
+            </div>
+            <div>
+              <label for="email" class="block text-sm">Email</label>
+              <input type="email" id="email" name="email" required class="w-full p-2">
+            </div>
+            <div>
+              <label for="message" class="block text-sm">What’s Good?</label>
+              <textarea id="message" name="message" required class="w-full p-2 h-32"></textarea>
+            </div>
+            <div class="flex items-center">
+              <input type="checkbox" id="terms" name="terms" required class="mr-2">
+              <label for="terms" class="text-sm">I’m cool with the Terms & Conditions</label>
+            </div>
+            <button id="contact-submit" class="w-full p-2">Send It</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="py-6 text-center">
+    <p>© 2025 E.S RWAMIKO, Gisagara, 220703. All rights reserved, fam.</p>
+  </footer>
+</body>
+</html>
