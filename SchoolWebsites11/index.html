@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES MUZENGA</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #F8F1E9;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    .animate-fade-in {
+      animation: fade-in 1.2s ease-in-out forwards;
+    }
+    .animate-slide-in {
+      animation: slide-in 0.6s ease-in-out forwards;
+    }
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slide-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 85%;
+      max-height: 85%;
+      border: 4px solid #D4A017;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    .navbar {
+      background: linear-gradient(to right, #1A3C34, #2E5C52);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .navbar a {
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .navbar a:hover {
+      color: #D4A017;
+      transform: scale(1.05);
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: #D4A017;
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    .btn-primary {
+      background-color: #1A3C34;
+      color: #F8F1E9;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #D4A017;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar text-white fixed w-full top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-bold animate-fade-in">ES MUZENGA</h1>
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      <ul id="nav-menu" class="hidden md:flex space-x-8">
+        <li class="animate-slide-in" style="animation-delay: 0.1s;"><a href="#home" class="text-lg">Home</a></li>
+        <li class="animate-slide-in" style="animation-delay: 0.2s;"><a href="#about" class="text-lg">About Us</a></li>
+        <li class="animate-slide-in" style="animation-delay: 0.3s;"><a href="#statistics" class="text-lg">Statistics</a></li>
+        <li class="animate-slide-in" style="animation-delay: 0.4s;"><a href="#map" class="text-lg">Location</a></li>
+        <li class="animate-slide-in" style="animation-delay: 0.5s;"><a href="#gallery" class="text-lg">Gallery</a></li>
+        <li class="animate-slide-in" style="animation-delay: 0.6s;"><a href="#contact" class="text-lg">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-white" style="background-image: url('photo1.jpg')">
+    <div class="bg-black bg-opacity-60 p-12 rounded-lg text-center">
+      <h1 class="text-6xl font-bold mb-4 animate-fade-in" style="animation-delay: 0.2s;">Welcome to ES MUZENGA</h1>
+      <p class="text-xl animate-fade-in" style="animation-delay: 0.4s;">Excellence in Education, Gisagara, Rwanda</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center section-title animate-fade-in">About ES MUZENGA</h2>
+      <div class="flex flex-col md:flex-row items-center gap-12 mt-8">
+        <img src="photo10.jpg" alt="ES MUZENGA" class="w-full md:w-1/2 rounded-lg shadow-lg card">
+        <div class="flex-1">
+          <p class="text-lg text-gray-600 leading-relaxed">Located in the vibrant district of Gisagara, Rwanda (220405), ES MUZENGA is a premier educational institution dedicated to fostering academic excellence and holistic development. Our inclusive and supportive environment nurtures intellectual curiosity, social responsibility, and emotional growth. With a committed faculty and a robust curriculum, we prepare students to excel in a dynamic world. Our modern facilities, including well-equipped science labs, a comprehensive library, and spacious sports fields, enhance both academic and extracurricular experiences. At ES MUZENGA, we prioritize discipline, integrity, and community involvement, empowering students to become proactive global citizens.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section id="statistics" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center section-title animate-fade-in">Our Community</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div class="bg-white p-8 rounded-lg shadow-lg text-center card">
+          <h3 class="text-2xl font-semibold mb-2">Students</h3>
+          <p class="text-3xl font-bold text-gray-800">320</p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-lg text-center card">
+          <h3 class="text-2xl font-semibold mb-2">Teachers</h3>
+          <p class="text-3xl font-bold text-gray-800">18</p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-lg text-center card">
+          <h3 class="text-2xl font-semibold mb-2">Staff</h3>
+          <p class="text-3xl font-bold text-gray-800">7</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section id="map" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center section-title animate-fade-in">Our Location</h2>
+      <div class="w-full h-96 rounded-lg overflow-hidden shadow-lg mt-8 card">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.4598589815528!2d29.744997973675424!3d-2.351049197628469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c33f9bd742cb5f%3A0xe0e26a066a9c3ad3!2sGroupe%20Scolaire%20Nyanza%20A!5e0!3m2!1sen!2spl!4v1744023800200!5m2!1sen!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center section-title animate-fade-in">Gallery</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+        <img src="photo2.jpg" alt="School Building" class="w-full h-64 object-cover rounded-lg shadow-lg card cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo3.jpg" alt="School Classes" class="w-full h-64 object-cover rounded-lg shadow-lg card cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo4.jpg" alt="School Parking" class="w-full h-64 object-cover rounded-lg shadow-lg card cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo5.jpg" alt="School Class" class="w-full h-64 object-cover rounded-lg shadow-lg card cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo6.jpg" alt="School Grounds" class="w-full h-64 object-cover rounded-lg shadow-lg card cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo7.jpg" alt="School Bus" class="w-full h-64 object-cover rounded-lg shadow-lg card cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo8.jpg" alt="School Hallway" class="w-full h-64 object-cover rounded-lg shadow-lg card cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo11.jpg" alt="School Labs" class="w-full h-64 object-cover rounded-lg shadow-lg card cursor-pointer" onclick="openLightbox(this.src)">
+        
+      </div>
+      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center section-title animate-fade-in">Contact Us</h2>
+      <div class="flex flex-col md:flex-row gap-12 mt-8">
+        <div class="md:w-1/2">
+          <div class="grid grid-cols-1 gap-6">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center card">
+              <h3 class="text-xl font-semibold mb-2">Email</h3>
+              <p class="text-gray-600">esmuzenga@gmail.com</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center card">
+              <h3 class="text-xl font-semibold mb-2">Phone</h3>
+              <p class="text-gray-600">+250 788123456</p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center card">
+              <h3 class="text-xl font-semibold mb-2">Address</h3>
+              <p class="text-gray-600">Gisagara, 220405, Rwanda</p>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2 max-w-lg mx-auto">
+          <div class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+              <input type="text" id="name" name="name" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A017]">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+              <input type="email" id="email" name="email" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A017]">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">How can we help?</label>
+              <textarea id="message" name="message" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A017] h-32"></textarea>
+            </div>
+            <div class="flex items-center">
+              <input type="checkbox" id="terms" name="terms" required class="mr-2">
+              <label for="terms" class="text-sm text-gray-700">I agree to the Terms & Conditions</label>
+            </div>
+            <button id="contact-submit" class="w-full btn-primary p-3 rounded-lg">Send a Request</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-[#1A3C34] text-white py-8">
+    <div class="container mx-auto px-6 text-center">
+      <p class="text-sm">© 2025 ES MUZENGA, Gisagara, 220405, Rwanda. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
