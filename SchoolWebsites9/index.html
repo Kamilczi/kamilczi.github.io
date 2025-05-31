@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G.S GASAGARA</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f7faf4;
+      color: #2d3748;
+    }
+    .navbar {
+      background: linear-gradient(to right, #2f855a, #48bb78);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('photo1.jpg') no-repeat center/cover;
+      min-height: 105vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .animate-fade-in {
+      animation: fade-in 1s ease-in forwards;
+    }
+    .animate-slide-in {
+      animation: slide-in 0.5s ease-in forwards;
+    }
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slide-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .gallery-grid img {
+      border-radius: 10px;
+      transition: transform 0.3s, opacity 0.3s;
+      cursor: pointer;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .quick-contact {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #f6ad55;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 999px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      transition: background-color 0.3s;
+    }
+    .quick-contact:hover {
+      background-color: #ed8936;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #2f855a;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar text-white fixed w-full top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold animate-fade-in">G.S GASAGARA</h1>
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      <ul id="nav-menu" class="hidden md:flex space-x-6">
+        <li class="animate-slide-in" style="animation-delay: 0.1s;"><a href="#home" class="hover:text-orange-200 transition">Home</a></li>
+        <li class="animate-slide-in" style="animation-delay: 0.2s;"><a href="#about" class="hover:text-orange-200 transition">About</a></li>
+        <li class="animate-slide-in" style="animation-delay: 0.3s;"><a href="#statistics" class="hover:text-orange-200 transition">Stats</a></li>
+        <li class="animate-slide-in" style="animation-delay: 0.4s;"><a href="#map" class="hover:text-orange-200 transition">Map</a></li>
+        <li class="animate-slide-in" style="animation-delay: 0.5s;"><a href="#gallery" class="hover:text-orange-200 transition">Gallery</a></li>
+        <li class="animate-slide-in" style="animation-delay: 0.6s;"><a href="#contact" class="hover:text-orange-200 transition">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="animate-fade-in p-8 md:p-12 rounded-lg">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to G.S GASAGARA</h1>
+      <p class="text-lg md:text-xl mb-6">Empowering students to excel in Nyanza, Rwanda!</p>
+      <a href="#contact" class="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 transition">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">About G.S GASAGARA</h2>
+      <div class="card flex flex-col md:flex-row items-center gap-8 p-8">
+        <img src="photo10.jpg" alt="G.S GASAGARA" class="w-full md:w-1/2 rounded-lg">
+        <div class="flex-1">
+          <p class="text-lg text-gray-600">Located in the vibrant community of Nyanza, G.S GASAGARA is dedicated to fostering academic excellence and personal growth. Our school, identified by code 220103, is a cornerstone of education in the region, offering a supportive environment with modern facilities, including science laboratories, a resourceful library, and dynamic sports areas. We are committed to nurturing innovative thinkers and responsible leaders for a brighter future.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section id="statistics" class="py-16 bg-green-50">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">Our Impact</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card p-6 text-center">
+          <h3 class="text-xl font-semibold mb-2">Students</h3>
+          <p class="text-3xl font-bold text-green-600">300</p>
+        </div>
+        <div class="card p-6 text-center">
+          <h3 class="text-xl font-semibold mb-2">Teachers</h3>
+          <p class="text-3xl font-bold text-green-600">15</p>
+        </div>
+        <div class="card p-6 text-center">
+          <h3 class="text-xl font-semibold mb-2">Programs</h3>
+          <p class="text-3xl font-bold text-green-600">8</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section id="map" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">Find Us</h2>
+      <div class="card w-full h-96 rounded-lg overflow-hidden">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.4598589815528!2d29.744997973675424!3d-2.351049197628469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c33f9bd742cb5f%3A0xe0e26a066a9c3ad3!2sNyanza%2C%20Rwanda!5e0!3m2!1sen!2spl!4v1744023800200!5m2!1sen!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 bg-green-50">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">Gallery</h2>
+      <div class="gallery-grid">
+        <img src="photo2.jpg" alt="School Building" onclick="openLightbox(this.src)">
+        <img src="photo3.jpg" alt="School Classes" onclick="openLightbox(this.src)">
+        <img src="photo4.jpg" alt="School Parking" onclick="openLightbox(this.src)">
+        <img src="photo5.jpg" alt="School Class" onclick="openLightbox(this.src)">
+        <img src="photo6.jpg" alt="School Grounds" onclick="openLightbox(this.src)">
+      </div>
+      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">For More Info!</h2>
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-1/2">
+          <div class="grid grid-cols-1 gap-6">
+            <div class="card p-6 text-center">
+              <h3 class="text-xl font-semibold mb-2">Email</h3>
+              <p class="text-gray-600">gsnyagasozinyanza@gmail.com</p>
+            </div>
+            <div class="card p-6 text-center">
+              <h3 class="text-xl font-semibold mb-2">Phone</h3>
+              <p class="text-gray-600">+250 788123456</p>
+            </div>
+            <div class="card p-6 text-center">
+              <h3 class="text-xl font-semibold mb-2">Address</h3>
+              <p class="text-gray-600">Nyanza, 220103, Rwanda</p>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2 max-w-lg mx-auto">
+          <div class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+              <input type="text" id="name" name="name" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+              <input type="email" id="email" name="email" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+              <textarea id="message" name="message" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 h-32"></textarea>
+            </div>
+            <button id="contact-submit" class="w-full bg-orange-500 text-white p-3 rounded-lg hover:bg-orange-600 transition">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Contact Button -->
+  <a href="#contact" class="quick-contact">Quick Contact</a>
+
+  <!-- Footer Section -->
+  <footer class="bg-green-800 text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p>© 2025 G.S GASAGARA, Nyanza, 220103, Rwanda. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
