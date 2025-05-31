@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GS MUBUGA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="quill"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="container">
+      <h1 class="animate-fade-in">GS MUBUGA</h1>
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="#f4e4bc" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      <ul id="nav-menu" class="md:flex md:gap-6">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#statistics">Statistics</a></li>
+        <li><a href="#map">Map</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div>
+      <h1 class="animate-fade-in">Welcome to GS MUBUGA</h1>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="animate-on-scroll">
+    <div class="section-divider"></div>
+    <div class="container">
+      <img src="photo10.jpg" alt="GS MUBUGA">
+      <div>
+        <h2>About GS MUBUGA</h2>
+        <p>GS MUBUGA, located in Nyanza, 211003, is a distinguished educational institution committed to providing high-quality education and nurturing holistic student development. Situated in the heart of Nyanza, we offer a supportive and inclusive environment that fosters academic excellence, creativity, and personal growth. Our dedicated faculty delivers a robust curriculum tailored to prepare students for future opportunities. With a focus on discipline, innovation, and community involvement, GS MUBUGA boasts modern facilities, including science laboratories, a comprehensive library, and vibrant sports fields, to support both academic and extracurricular activities. Our mission is to inspire students to achieve their highest potential and become responsible, global leaders.</p>
+      </div>
+    </div>
+    <div class="section-divider"></div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section id="statistics" class="animate-on-scroll">
+    <div class="section-divider"></div>
+    <div class="container">
+      <h2>Statistics</h2>
+      <div class="grid">
+        <div>
+          <h3>Students</h3>
+          <p>300</p>
+        </div>
+        <div>
+          <h3>Teachers</h3>
+          <p>15</p>
+        </div>
+        <div>
+          <h3>Other Workers</h3>
+          <p>6</p>
+        </div>
+      </div>
+    </div>
+    <div class="section-divider"></div>
+  </section>
+
+  <!-- Map Section -->
+  <section id="map" class="animate-on-scroll">
+    <div class="section-divider"></div>
+    <div class="container">
+      <h2>Location</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.4600000000000!2d29.745000000000000!3d-2.351000000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMiKwMjEnMDMuNiJTIDI5wrA0NCc0Mi4wIkU!5e0!3m2!1sen!2spl!4v1744023800200!5m2!1sen!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="section-divider"></div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="animate-on-scroll">
+    <div class="section-divider"></div>
+    <div class="container">
+      <h2>Gallery</h2>
+      <div class="grid">
+        <img src="photo2.jpg" alt="School Building" ">
+        <img src="photo3.jpg" alt="School Classes" ">
+        <img src="photo4.jpg" alt="School Parking" ">
+        <img src="photo5.jpg" alt="School Class" ">
+        <img src="photo6.jpg" alt="School Grounds" ">
+        <img src="photo7.jpg" alt="School Bus" ">
+        <img src="photo8.jpg" alt="School Hallway" ">
+        <img src="photo11.jpg" alt="School Labs" ">       
+        <img src="photo10.jpg" alt="School Library" ">
+        <img src="photo9.jpg" alt="School Library" ">
+      </div>
+      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="">
+      </div>
+    </div>
+    <div class="section-divider"></div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="animate-on-scroll">
+    <div class="section-divider"></div>
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <div>
+          <h3>Email</h3>
+          <p>gsnyagasozinyanza@gmail.com</p>
+        </div>
+        <div>
+          <h3>Phone</h3>
+          <p>+256 00000000</p>
+        </div>
+        <div>
+          <h3>Address</h3>
+          <p>Nyanza, 211003, Rwanda</p>
+        </div>
+      </div>
+      <form>
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="terms">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I agree to the Terms & Conditions</label>
+        </div>
+        <button id="contact-submit" type="button">Send a request</button>
+      </form>
+    </div>
+    <div class="section-divider"></div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>© 2025 GS MUBUGA, Nyanza, 211003. All rights reserved.</p>
+  </footer>
+</body>
+</html>
