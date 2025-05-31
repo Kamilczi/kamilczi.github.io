@@ -1,54 +1,162 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piotr Siegoczyński – Mistrz Świata w Kickboxingu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oficjalna strona Piotra Siegoczyńskiego – pierwszego polskiego Mistrza Świata w kickboxingu, trenera i Prezesa PZKB. Treningi, osiągnięcia, galeria i więcej.">
+    <meta name="keywords" content="Piotr Siegoczyński, kickboxing, Mistrz Świata, treningi Warszawa, Kick Center, K-1, boks">
+    <meta name="author" content="Kick Center">
+    <title>Piotr Siegoczyński – Legenda Kickboxingu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Piotr Siegoczyński – Mistrz Świata w Kickboxingu</h1>
-    <h2>Sportowiec. Trener. Motywator.</h2>
-    <div class="motto">„Mistrz nie rodzi się na ringu – mistrz rodzi się na treningu.”</div>
-  </header>
+    <!-- Nawigacja -->
+    <header>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Kick Center Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Strona główna</a></li>
+                <li><a href="#about" class="nav-link">O mnie</a></li>
+                <li><a href="#achievements" class="nav-link">Osiągnięcia</a></li>
+                <li><a href="#gallery" class="nav-link">Galeria</a></li>
+                <li><a href="#offer" class="nav-link">Oferta</a></li>
+                <li><a href="#media" class="nav-link">Media</a></li>
+                <li><a href="#contact" class="nav-link">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section class="power-blocks">
-    <div class="power-block">
-      <span>🥇</span>
-      <div>Mistrz świata</div>
-    </div>
-    <div class="power-block">
-      <span>🧠</span>
-      <div>Mentor i trener</div>
-    </div>
-    <div class="power-block">
-      <span>🥊</span>
-      <div>Ponad 30 lat w kickboxingu</div>
-    </div>
-  </section>
+    <!-- Strona główna -->
+    <section id="home" class="hero" data-aos="fade-up" data-aos-duration="1000">
+        <!-- Wariant 1: Film w tle -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="wideo.mp4" type="video/mp4">
+            <!-- Fallback na zdjęcie, jeśli wideo nie działa -->
+            <div class="hero-bg"></div>
+        </video>
+        <!-- Wariant 2: Zdjęcie w tle (odkomentuj, aby użyć zamiast wideo) -->
+        <!-- <div class="hero-bg"></div> -->
+        <div class="hero-content">
+            <h1 class="gradient-text">Piotr Siegoczyński</h1>
+            <h2>Legenda polskiego kickboxingu</h2>
+            <p>6-krotny Mistrz Świata, trener mistrzów i Prezes PZKB. Dołącz do Kick Center i trenuj z najlepszymi!</p>
+            <a href="#contact" class="cta-button pulse">Zapisz się na trening!</a>
+        </div>
+    </section>
 
-  <section class="video-section">
-    <video autoplay muted loop>
-      <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
-      Twój przeglądarka nie wspiera odtwarzania wideo.
-    </video>
-  </section>
+    <!-- O mnie -->
+    <section id="about" class="section" data-aos="fade-up" data-aos-duration="1200">
+        <h2 class="gradient-text">O mnie</h2>
+        <div class="about-content">
+            <img src="photo1.jpg" alt="Piotr Siegoczyński" class="about-img" data-aos="zoom-out" data-aos-delay="200">
+            <div class="about-text" data-aos="fade-right" data-aos-delay="400">
+                <p>Piotr Siegoczyński, urodzony 26 sierpnia 1966 roku w Milanówku, to pionier kickboxingu w Polsce. Od 1980 roku zdobył 6 tytułów Mistrza Świata, 7 tytułów Mistrza Europy i wychował dziesiątki medalistów. Jako Prezes PZKB (od 2017) przyczynił się do włączenia kickboxingu do sportów olimpijskich.</p>
+                <p>Dziś prowadzi Kick Center i X Fight Piaseczno, szkoląc zarówno mistrzów, jak i pasjonatów. Bilans walk: 275/289 wygranych planszowych, 22/26 zawodowych.</p>
+            </div>
+        </div>
+    </section>
 
-  <section class="about-section">
-    <h3>Poznaj moją historię</h3>
-    <p>Witaj na mojej oficjalnej stronie! Nazywam się Piotr Siegoczyński i od ponad 30 lat jestem związany ze sportami walki. Jako wielokrotny mistrz świata w kickboxingu, wiem, jaką wartość mają pasja, dyscyplina i nieustanne dążenie do celu.</p>
-    <div class="cta">
-      <button onclick="location.href='#'">O mnie</button>
-    </div>
-  </section>
+    <!-- Osiągnięcia -->
+    <section id="achievements" class="section" data-aos="fade-up" data-aos-duration="1200">
+        <h2 class="gradient-text">Osiągnięcia</h2>
+        <ul class="achievements-list">
+            <li data-aos="flip-left" data-aos-delay="100"><strong>6-krotny Mistrz Świata seniorów</strong> (m.in. Budapeszt 1985, Mestre 1990)</li>
+            <li data-aos="flip-left" data-aos-delay="200"><strong>7-krotny Mistrz Europy seniorów</strong></li>
+            <li data-aos="flip-left" data-aos-delay="300"><strong>3-krotny Mistrz Świata weteranów</strong></li>
+            <li data-aos="flip-left" data-aos-delay="400"><strong>Trener Kadry Narodowej</strong> od 1997 roku</li>
+            <li data-aos="flip-left" data-aos-delay="500"><strong>Prezes PZKB</strong> od 2017 roku</li>
+            <li data-aos="flip-left" data-aos-delay="600">Pionier włączenia kickboxingu do The World Games i Igrzysk Olimpijskich</li>
+        </ul>
+    </section>
 
-  <section class="about-section">
-    <h3>Gotowy na trening?</h3>
-    <div class="cta">
-      <button onclick="location.href='#'">Umów się na trening</button>
-    </div>
-  </section>
+    <!-- Galeria -->
+    <section id="gallery" class="section" data-aos="fade-up" data-aos-duration="1200">
+        <h2 class="gradient-text">Galeria</h2>
+        <div class="gallery-slider">
+            <div><img src="photo2.jpg" alt="Mistrzostwa Świata 1985" class="gallery-img"></div>
+            <div><img src="photo3.jpg" alt="Trening Kick Center" class="gallery-img"></div>
+            <div><img src="photo4.jpg" alt="Gala DSF Kickboxing" class="gallery-img"></div>
+            <div><img src="photo5.jpg" alt="Obóz sportowy" class="gallery-img"></div>
+        </div>
+    </section>
+
+    <!-- Oferta -->
+    <section id="offer" class="section" data-aos="fade-up" data-aos-duration="1200">
+        <h2 class="gradient-text">Oferta</h2>
+        <div class="offer-grid">
+            <div class="offer-item" data-aos="zoom-out" data-aos-delay="100">
+                <h3>Kickboxing i K-1</h3>
+                <p>Grupy dla dorosłych, młodzieży i dzieci. Przygotowanie do zawodów i treningi rekreacyjne.</p>
+            </div>
+            <div class="offer-item" data-aos="zoom-out" data-aos-delay="200">
+                <h3>Boks</h3>
+                <p>Zajęcia dla początkujących i zaawansowanych. Rozwój techniki i taktyki.</p>
+            </div>
+            <div class="offer-item" data-aos="zoom-out" data-aos-delay="400">
+                <h3>Treningi personalne</h3>
+                <p>Indywidualne plany treningowe z mistrzem.</p>
+            </div>
+        </div>
+        <a href="#contact" class="cta-button pulse" data-aos="fade-up" data-aos-delay="500">Sprawdź szczegóły</a>
+    </section>
+
+    <!-- Media -->
+    <section id="media" class="section" data-aos="fade-up" data-aos-duration="1200">
+        <h2 class="gradient-text">Media</h2>
+        <div class="media-content">
+            <p>Zobacz wywiady i relacje z udziałem Piotra Siegoczyńskiego:</p>
+            <ul>
+                <li data-aos="fade-up" data-aos-delay="100"><a href="https://wojownicy-sport.pl/wywiad-z-piotrem-siegoczynskim-prezesem-polskiego-zwiazku-kickboxingu-2/" target="_blank">Wywiad w „wojownicy-sport.pl”</a></li>
+                <li data-aos="fade-up" data-aos-delay="200"><a href="https://przegladsportowy.onet.pl/piotr-siegoczynski" target="_blank">Relacje z Przeglądu Sportowego</a></li>
+                <li data-aos="fade-up" data-aos-delay="300"><a href="https://www.polskieradio.pl/10/3961/artykul/1836137,jakie-czasy-czekaja-polski-kickboxing" target="_blank">Rozmowa w "polskieradio.pl"</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact" class="section" data-aos="fade-up" data-aos-duration="1200">
+        <h2 class="gradient-text">Kontakt</h2>
+        <div class="contact-content">
+            <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+                <p><strong>Adres:</strong> Kick Center, ul. Gotarda 16, Warszawa</p>
+                <p><strong>Telefon:</strong> Piotr Siegoczyński: 602-865-788</p>
+                <p><strong>E-mail:</strong> kontakt.kickcenter@gmail.com</p>
+                
+            </div>
+            <form class="contact-form" data-aos="fade-left" data-aos-delay="400">
+                <input type="text" placeholder="Imię i nazwisko" required>
+                <input type="email" placeholder="E-mail" required>
+                <textarea placeholder="Wiadomość" required></textarea>
+                <button type="submit" class="cta-button pulse">Wyślij</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Stopka -->
+    <footer>
+        <p>© 2025 Piotr Siegoczyński | Wszystkie prawa zastrzeżone</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/pzkickboxing" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.instagram.com/kickcenterfightclub/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Skrypty -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
