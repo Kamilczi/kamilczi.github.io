@@ -1,155 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G.S NYAGASOZI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GS GATI</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="scripts.js" defer></script>
+  <style>
+    .animate-fade-in {
+      animation: fade-in 1s ease-in forwards;
+    }
+    .animate-slide-in {
+      animation: slide-in 0.5s ease-in forwards;
+    }
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slide-in {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
 </head>
-<body>
-<div class="wrapper">
-    <header class="menu">
-        <div class="container">
-            <nav class="navbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about us">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#statistics">Statistics</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#map">Map</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
-                    </li>
+<body class="bg-gray-100">
+  <!-- Navigation Bar -->
+  <nav class="bg-gray-800 text-white fixed w-full top-0 z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold opacity-0 animate-fade-in">GS GATI</h1>
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      <ul id="nav-menu" class="hidden md:flex space-x-6">
+        <li class="opacity-0 animate-slide-in" style="animation-delay: 0.1s;"><a href="#home" class="hover:text-gray-300 transition">Home</a></li>
+        <li class="opacity-0 animate-slide-in" style="animation-delay: 0.2s;"><a href="#about" class="hover:text-gray-300 transition">About Us</a></li>
+        <li class="opacity-0 animate-slide-in" style="animation-delay: 0.3s;"><a href="#statistics" class="hover:text-gray-300 transition">Statistics</a></li>
+        <li class="opacity-0 animate-slide-in" style="animation-delay: 0.4s;"><a href="#map" class="hover:text-gray-300 transition">Map</a></li>
+        <li class="opacity-0 animate-slide-in" style="animation-delay: 0.5s;"><a href="#gallery" class="hover:text-gray-300 transition">Gallery</a></li>
+        <li class="opacity-0 animate-slide-in" style="animation-delay: 0.6s;"><a href="#contact" class="hover:text-gray-300 transition">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <!-- Home Section -->
+  <section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-white" style="background-image: url('photo1.jpg')">
+    <div class="bg-black bg-opacity-50 p-10 rounded-lg text-center">
+      <h1 class="text-5xl font-bold mb-4 opacity-0 animate-fade-in" style="animation-delay: 0.2s;">Welcome to GS GATI</h1>
+    </div>
+  </section>
 
-    <section class="navslider">
-        <div class="slider">
+<!-- About Section -->
+<section id="about" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+    <img src="photo2.jpg" alt="photo2.jpg" class="w-full md:w-1/2 rounded-lg shadow-lg">
+    <div class="flex-1">
+      <h2 class="text-3xl font-bold mb-4 text-center md:text-left">About GS GATI</h2>
+      <p class="text-lg text-gray-700">
+        GS GATI (School Code: 210713), located in the heart of Nyanza, Rwanda, is a distinguished secondary school committed to academic excellence and holistic student development. As part of Rwanda’s Groupe Scolaire network, we offer a robust curriculum aligned with national education standards, preparing students for advanced studies and professional success. Our dedicated faculty fosters critical thinking, creativity, and leadership through innovative teaching methods. Situated in the historic town of Nyanza, GS GATI benefits from a vibrant community and rich cultural heritage, enhancing our students’ learning experience. Equipped with modern classrooms, science laboratories, and sports facilities, we provide an environment where students thrive academically and socially. Our mission is to nurture responsible citizens who contribute meaningfully to Rwanda’s development and global society.
+      </p>
+    </div>
+  </div>
+</section>
 
-        </div>
+ <!-- Statistics Section -->
+<section id="statistics" class="py-16 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center">Statistics</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition">
+        <h3 class="text-xl font-semibold mb-2">Students</h3>
+        <p class="text-2xl font-bold">300</p>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition">
+        <h3 class="text-xl font-semibold mb-2">Teachers</h3>
+        <p class="text-2xl font-bold">15</p>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition">
+        <h3 class="text-xl font-semibold mb-2">Support Staff</h3>
+        <p class="text-2xl font-bold">6</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="uppertext">
+  <!-- Map Section -->
+<section id="map" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center">Location</h2>
+    <div class="w-full h-96 rounded-lg overflow-hidden shadow-lg">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.4598589815528!2d29.744997973675424!3d-2.351049197628469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c33f9bd742cb5f%3A0xe0e26a066a9c3ad3!2sGroupe%20Scolaire%20Nyanza%20A!5e0!3m2!1sen!2spl!4v1744023800200!5m2!1sen!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <p class="text-center mt-4 text-gray-700">GS GATI, Nyanza (School Code: 210713), Rwanda</p>
+  </div>
+</section>
 
-        </div>
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Gallery</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <img src="photo3.jpg" alt="photo3.jpg" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo4.jpg" alt="photo4.jpg" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo5.jpg" alt="photo5.jpg" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo6.jpg" alt="photo6.jpg" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo7.jpg" alt="photo7.jpg" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo8.jpg" alt="photo8.jpg" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo9.jpg" alt="photo9.jpg" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo10.jpg" alt="photo10.jpg" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+        <img src="photo11.jpg" alt="photo11.jpg" class="w-full h-48 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer" onclick="openLightbox(this.src)">
+      </div>
+      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="">
+      </div>
+    </div>
+  </section>
 
-    </section>
-
-    <section class="container-aboutus">
-        <div class="row-aboutus">
-            <div class="photo-aboutus"></div>
-            <div class="text-aboutus"></div>
-        </div>
-
-    </section>
-
-    <section class="container-statistics">
-        <div class="row-statistics">
-            <div class="col-statistics">
-                <div class="display-statistics">
-                    <div class="number-statistics">
-                    
-                    </div>
-                    <span>STUDENTS</span>
-                </div>
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-1/2">
+          <div class="grid grid-cols-1 gap-6 mb-8">
+            <div class="bg-gray-200 p-6 rounded-lg shadow-lg text-center">
+              <h3 class="text-xl font-semibold mb-2">Email</h3>
+              <p class="text-gray-700">gsgatinyanza@gmail.com</p>
             </div>
-            <div class="col-statistics">
-                <div class="display-statistics">
-                    <div class="number-statistics">
-                    
-                    </div>
-                    <span>TEACHERS</span>
-                </div>
+            <div class="bg-gray-200 p-6 rounded-lg shadow-lg text-center">
+              <h3 class="text-xl font-semibold mb-2">Phone</h3>
+              <p class="text-gray-700">+256 784836434</p>
             </div>
-            <div class="col-statistics">
-                <div class="display-statistics">
-                    <div class="number-statistics">
-                    
-                    </div>
-                    <span>OTHER WORKERS</span>
-                </div>
+            <div class="bg-gray-200 p-6 rounded-lg shadow-lg text-center">
+              <h3 class="text-xl font-semibold mb-2">Address</h3>
+              <p class="text-gray-700">Nyanza 210802, Rwanda</p>
             </div>
-
+          </div>
         </div>
-
-    </section>
-
-    <section class="container-map">
-
-    </section>
-
-    <section class="container-gallery">
-        <div class="text-gallery">
-            <h2>GALLERY</h2>
-        </div>
-        <div class="row-gallery">
-            <div class="photo-gallery"></div>
-            <div class="photo-gallery"></div>
-            <div class="photo-gallery"></div>
-            <div class="photo-gallery"></div>
-            <div class="photo-gallery"></div>
-            <div class="photo-gallery"></div>
-            <div class="photo-gallery"></div>
-            <div class="photo-gallery"></div>
-            <div class="photo-gallery"></div>
-        </div>
-    </section>
-
-    <section class="container-contact">
-        <div class="text-contact">
-            <div class="display1-contact">CONTACT</div>
-            <div class="display2-contact">PLEASE REACH US ON</div>
-        </div>
-
-        <div class="row-contact">
-            <div class="col-contact">
-                <h4 class="title-contact"></h4>
-                <div class="info-contact"></div>
+        <div class="md:w-1/2 max-w-lg mx-auto">
+          <div class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+              <input type="text" id="name" name="name" required class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500">
             </div>
-            <div class="col-contact">
-                <h4 class="title-contact"></h4>
-                <div class="info-contact"></div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+              <input type="email" id="email" name="email" required class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500">
             </div>
-            <div class="col-contact">
-                <h4 class="title-contact"></h4>
-                <div class="info-contact"></div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">How can we help?</label>
+              <textarea id="message" name="message" required class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"></textarea>
             </div>
+            <div class="flex items-center">
+              <input type="checkbox" id="terms" name="terms" required class="mr-2">
+              <label for="terms" class="text-sm text-gray-700">I agree to the Terms & Conditions</label>
+            </div>
+            <button id="contact-submit" class="w-full bg-gray-800 text-white p-2 rounded-lg hover:bg-gray-700 transition">Send a request</button>
+          </div>
         </div>
-        <div class="moreinfo-contact">
-            <div class="form-contact">
-                <form class="formrow-contact">
-                    <div class="data-1"></div>
-                    <div class="data-1"></div>
-                    <div class="data-2"></div>
-                    <div class="data-2"></div>
-                    <div class="data-2"></div>
-                </form>
-            </div>
-            <div class="sub-contact">
-                <div class="sub-display">
-                    <h2 class="display-h2">G.S NYAGASOZI School</h2>
-                    <p class="sub-text">Please Subscribe</p>
-                    <form class="sub-form">
-                        <div class="input-form">
-                           <span class="icon-sub"><i class="envelope"></i></span> 
-                           <input class="inp-form"></input>
-                           <button class="subbtn-contact">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-</div>
-    
+  <!-- Footer Section -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p>© 2025 GS GATI, Nyanza 210802. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
