@@ -1,0 +1,691 @@
+/* Zmienne CSS */
+:root {
+  --black: #1A1A1A;
+  --red: #E30613;
+  --yellow: #F4E04D;
+  --white: #FFFFFF;
+  --gray: #E0E0E0;
+  --gradient: linear-gradient(135deg, #E30613, #B0040F);
+}
+
+/* Reset i podstawowe style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+/* Nawigacja */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(26, 26, 26, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+nav.scrolled {
+  background: rgba(26, 26, 26, 1);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+
+.nav-menu li {
+  margin: 0 1.5rem;
+}
+
+.nav-menu li a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: var(--red);
+}
+
+nav .cta {
+  padding: 0.5rem 1.5rem;
+  background: var(--gradient);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav .cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Sekcja Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.hero video,
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+}
+
+.hero-content {
+  z-index: 10;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+  font-weight: 400;
+}
+
+.hero p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons .cta {
+  padding: 0.75rem 2rem;
+  background: var(--gradient);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 25px;
+  margin: 0 1rem;
+  font-family: 'Montserrat', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-buttons .cta.cta-yellow {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+.hero-buttons .cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Power Blocks */
+.power-blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background: var(--white);
+  color: var(--black);
+}
+
+.power-blocks .block {
+  padding: 2rem;
+  text-align: center;
+  background: var(--black);
+  color: var(--white);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.power-blocks .block:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.power-blocks .block i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--red);
+}
+
+.power-blocks .block h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Sekcja O mnie */
+.o-mnie {
+  padding: 4rem 2rem;
+  background: var(--black);
+  text-align: center;
+}
+
+.o-mnie h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.o-mnie p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.o-mnie .cta {
+  padding: 0.75rem 2rem;
+  background: var(--gradient);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 25px;
+  transition: transform 0.3s ease;
+}
+
+.o-mnie .cta:hover {
+  transform: translateY(-2px);
+}
+
+/* Sekcja Osiągnięcia */
+.osiagniecia {
+  padding: 4rem 2rem;
+  background: var(--white);
+  color: var(--black);
+  text-align: center;
+}
+
+.osiagniecia h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.achievement {
+  padding: 1.5rem;
+  background: var(--black);
+  color: var(--white);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.achievement:hover {
+  transform: translateY(-5px);
+}
+
+/* Sekcja Galeria */
+.galeria {
+  padding: 4rem 2rem;
+  background: var(--black);
+  text-align: center;
+}
+
+.galeria h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Sekcja Oferta */
+.oferta {
+  padding: 4rem 2rem;
+  background: var(--white);
+  color: var(--black);
+  text-align: center;
+}
+
+.oferta h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.offer {
+  padding: 2rem;
+  background: var(--black);
+  color: var(--white);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.offer:hover {
+  transform: translateY(-5px);
+}
+
+.offer h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.oferta .cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  background: var(--gradient);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 25px;
+  transition: transform 0.3s ease;
+}
+
+.oferta .cta:hover {
+  transform: translateY(-2px);
+}
+
+/* Sekcja Media */
+.media {
+  padding: 4rem 2rem;
+  background: var(--black);
+  text-align: center;
+  position: relative;
+}
+
+.media h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.media-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  scroll-behavior: smooth;
+  padding: 1rem;
+}
+
+.media-item {
+  flex: 0 0 300px;
+  padding: 1.5rem;
+  background: var(--white);
+  color: var(--black);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.media-item:hover {
+  transform: translateY(-5px);
+}
+
+.media-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: #B0040F;
+}
+
+.carousel-prev {
+  left: 1rem;
+}
+
+.carousel-next {
+  right: 1rem;
+}
+
+/* Sekcja Blog */
+.blog {
+  padding: 4rem 2rem;
+  background: var(--white);
+  color: var(--black);
+  text-align: center;
+}
+
+.blog h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.blog-post {
+  padding: 2rem;
+  background: var(--black);
+  color: var(--white);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+}
+
+.blog-post h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post .cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: var(--gradient);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.newsletter {
+  margin-top: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.newsletter h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter input,
+.newsletter button {
+  padding: 0.75rem;
+  margin: 0.5rem;
+  border-radius: 25px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.newsletter input {
+  width: 100%;
+  max-width: 400px;
+}
+
+.newsletter button {
+  background: var(--gradient);
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Sekcja Kontakt */
+.kontakt {
+  padding: 4rem 2rem;
+  background: var(--black);
+  text-align: center;
+}
+
+.kontakt h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.kontakt form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.kontakt input,
+.kontakt textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.kontakt textarea {
+  height: 150px;
+}
+
+.kontakt button {
+  padding: 0.75rem 2rem;
+  background: var(--gradient);
+  color: var(--white);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.kontakt button:hover {
+  transform: translateY(-2px);
+}
+
+.contact-info {
+  margin-top: 2rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+}
+
+
+
+/* Stopka */
+footer {
+  padding: 2rem;
+  background: var(--white);
+  color: var(--black);
+  text-align: center;
+}
+
+.socials a {
+  margin: 0 1rem;
+  color: var(--black);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: var(--red);
+}
+
+/* Back to Top */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--gradient);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--black);
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    margin: 1rem 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero h1 { font-size: 3rem; }
+  .hero h2 { font-size: 1.5rem; }
+  .hero p { font-size: 1.5rem; }
+
+  .power-blocks { grid-template-columns: 1fr; }
+  .achievements-grid { grid-template-columns: 1fr; }
+  .offer-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+
+  .o-mnie h2, .osiagniecia h2, .galeria h2, .oferta h2, .media h2, .blog h2, .kontakt h2 {
+    font-size: 2rem;
+  }
+}
