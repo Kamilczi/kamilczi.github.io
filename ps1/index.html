@@ -1,74 +1,197 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piotr Siegoczyński - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oficjalna strona Piotra Siegoczyńskiego – Mistrza Świata w Kickboxingu. Poznaj jego historię, osiągnięcia i ofertę treningową.">
+    <meta name="keywords" content="Piotr Siegoczyński, kickboxing, mistrz świata, trener, motywator">
+    <meta name="author" content="Piotr Siegoczyński">
+    <title>Piotr Siegoczyński – Mistrz Świata w Kickboxingu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="hero">
-    <h1>Piotr Siegoczyński – Mistrz Świata w Kickboxingu</h1>
-    <h2>Sportowiec. Trener. Motywator.</h2>
-    <p class="motto">„Mistrz nie rodzi się na ringu – mistrz rodzi się na treningu.”</p>
-  </header>
+    <!-- Nawigacja -->
+    <nav class="navbar">
+        <div class="logo">Piotr Siegoczyński</div>
+        <ul class="nav-links">
+            <li><a href="#home">Strona Główna</a></li>
+            <li><a href="#about">O mnie</a></li>
+            <li><a href="#achievements">Osiągnięcia</a></li>
+            <li><a href="#gallery">Galeria</a></li>
+            <li><a href="#offer">Oferta</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+        <div class="hamburger">☰</div>
+    </nav>
 
-  <nav class="top-nav">
-    <a href="#biografia">Biografia</a>
-    <a href="#osiagniecia">Osiągnięcia</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#oferta">Oferta</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
-
-  <main>
-    <section id="biografia" class="section">
-      <h2>Moja droga do sukcesu</h2>
-      <p>Nazywam się Piotr Siegoczyński, urodziłem się 26 sierpnia 1966 roku w Milanówku. Kickboxing to moja pasja i życiowa droga. W 1985 roku zdobyłem tytuł mistrza świata WAKO jako pierwszy Polak. W kolejnych latach zostałem wielokrotnym mistrzem Europy i świata, zarówno wśród seniorów, jak i weteranów.
-
-        Po zakończeniu kariery zawodniczej zostałem trenerem kadry narodowej i działaczem – dziś pełnię funkcję prezesa Polskiego Związku Kickboxingu i prowadzę własną szkołę Kick Center. Moim celem jest rozwój tej dyscypliny w Polsce. Za osiągnięcia sportowe otrzymałem m.in. odznakę „Za Zasługi dla Sportu”.</p>
+    <!-- Strona Główna -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Piotr Siegoczyński – Mistrz Świata w Kickboxingu</h1>
+            <h2>Sportowiec. Trener. Motywator.</h2>
+            <p>Witaj na mojej oficjalnej stronie! Od ponad 30 lat żyję sportami walki. Jako wielokrotny mistrz świata w kickboxingu, wiem, że pasja, dyscyplina i wytrwałość to klucze do sukcesu. Zapraszam Cię do mojego świata, gdzie każdy trening to krok bliżej do pokonania własnych ograniczeń.</p>
+            <div class="hero-buttons">
+                <a href="#achievements" class="btn">Zobacz osiągnięcia</a>
+                <a href="#offer" class="btn">Dlaczego warto trenować ze mną</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="photo1.jpg" alt="Piotr Siegoczyński w ringu">
+            <div class="quote-overlay">„Nie urodziłem się mistrzem – stałem się nim.”</div>
+        </div>
     </section>
 
-    <section id="osiagniecia" class="section">
-      <h2>Najważniejsze sukcesy</h2>
-      <ul class="achievements">
-        <li>🏆 Mistrzostwo Świata WAKO</li>
-        <li>🥇 Mistrzostwo Europy</li>
-        <li>🥈 Wicemistrzwo Europy</li>
-        <li>🏆 10-krotne Mistrzostwo Polski</li>
-        <li>🥇 Laureat plebiscytu "Najlepszy sportowiec roku"</li>
-        
-        
-        
-      </ul>
+    <!-- Timeline Kariery -->
+    <section class="timeline">
+        <h2>Moja droga</h2>
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="timeline-year">1980</div>
+                <div class="timeline-content">Pierwszy trening.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1985</div>
+                <div class="timeline-content">Pierwszy tytuł Mistrza Świata.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1987</div>
+                <div class="timeline-content">Złoto na Mistrzostwach Europy.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1990</div>
+                <div class="timeline-content">Kolejne mistrzostwo świata.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1997</div>
+                <div class="timeline-content">Trener kadry narodowej kickboxingy.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2006-2010</div>
+                <div class="timeline-content">Wiceprezes Polskiego Związku Kick-Boxingu</div>
+            </div>
+               <div class="timeline-item">
+                <div class="timeline-year"></div>
+                <div class="timeline-content">I wiele więcej...</div>
+            </div>
+        </div>
     </section>
 
-    <section id="galeria" class="section">
-      <h2>Galeria</h2>
-      <div class="gallery">
-        <img src="img1.jpg" alt="Na ringu">
-        <img src="img2.jpg" alt="Z treningu">
-        <img src="img3.jpg" alt="Zwycięstwo">
-      </div>
+    <!-- Cytaty -->
+    <section class="quotes">
+        <h2>Co mówią o mnie</h2>
+        <div class="quote-container">
+            <blockquote>
+                „Piotr nauczył mnie, że ring to nie tylko walka z przeciwnikiem, ale z samym sobą.”<br>
+                <cite>– Anna, zawodniczka</cite>
+            </blockquote>
+            <blockquote>
+                „Trening z Piotrem to lekcja życia, nie tylko sportu.”<br>
+                <cite>– Michał, podopieczny</cite>
+            </blockquote>
+        </div>
     </section>
 
-    <section id="oferta" class="section">
-      <h2>Współpraca i treningi</h2>
-      <p>Szukasz czegoś więcej niż zwykłego treningu?
-        Ze mną nie tylko poznasz techniki kickboxingu, ale nauczysz się dyscypliny, koncentracji i pracy nad sobą.
-        Niezależnie od wieku, poziomu czy celu — pomogę Ci osiągnąć maksimum Twoich możliwości.
-        </p>
+    <!-- O mnie -->
+    <section id="about" class="about">
+        <h2>Kim jestem?</h2>
+        <div class="about-content">
+            <img src="photo2.jpg" alt="Piotr Siegoczyński z rodziną">
+            <div class="about-text">
+                <p>Prawdziwy mistrz to nie ten, kto nigdy nie upadł, lecz ten, kto zawsze wstaje. Jestem Piotr Siegoczyński. Moja przygoda z kickboxingiem zaczęła się w małej sali treningowej, z marzeniem, by kiedyś stanąć na podium. Krok po kroku, przez lata ciężkiej pracy, doszedłem do tytułów mistrza świata.</p>
+                <p>Ale to nie medale były najważniejsze. To ludzie, których spotkałem, i lekcje, które dał mi sport – wytrwałość, szacunek, pokora. Dziś, jako trener i mentor, chcę dzielić się tym z Tobą.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="kontakt" class="section contact">
-      <h2>Kontakt</h2>
-      <p><strong>Telefon:</strong> 123 456 789</p>
-      <p><strong>Email:</strong> kontakt@piotrsiegoczynski.pl</p>
-    </section>
-  </main>
+ 
 
-  <footer class="footer">
-    <p>&copy; 2025 Piotr Siegoczyński. Wszelkie prawa zastrzeżone.</p>
-  </footer>
+    <!-- Galeria -->
+    <section id="gallery" class="gallery">
+        <h2>Moje sportowe chwile</h2>
+        <p>Z treningu do triumfu – moja droga w kadrach.</p>
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">Wszystkie</button>
+            <button class="filter-btn" data-filter="ring">Na ringu</button>
+            <button class="filter-btn" data-filter="training">Treningi</button>
+            <button class="filter-btn" data-filter="life">Życie codzienne</button>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="ring"><img src="photo4.jpg" alt="Walka na ringu"></div>
+            <div class="gallery-item" data-category="training"><img src="photo3.jpg" alt="Trening"></div>
+            <div class="gallery-item" data-category="life"><img src="photo5.jpg" alt="Piotr z rodziną"></div>
+            <!-- Dodaj więcej obrazów -->
+        </div>
+    </section>
+
+    <!-- Oferta -->
+    <section id="offer" class="offer">
+        <h2>Twoja droga do mistrzostwa</h2>
+        <p>Szukasz czegoś więcej niż zwykłego treningu? Ze mną nauczysz się nie tylko technik kickboxingu, ale także dyscypliny, koncentracji i wiary w siebie.</p>
+        <div class="offer-grid">
+            <div class="offer-item">
+                <h3>Treningi indywidualne</h3>
+                <p>Spersonalizowany plan dostosowany do Twoich celów.</p>
+            </div>
+            <div class="offer-item">
+                <h3>Zajęcia grupowe</h3>
+                <p>Energia grupy, technika i motywacja.</p>
+            </div>
+            <div class="offer-item">
+                <h3>Szkolenia motywacyjne</h3>
+                <p>Jak przekuć pasję w sukces – dla firm i grup.</p>
+            </div>
+            <div class="offer-item">
+                <h3>Przygotowanie do zawodów</h3>
+                <p>Profesjonalne treningi dla przyszłych mistrzów.</p>
+            </div>
+        </div>
+        <a href="#contact" class="btn">Skontaktuj się i zacznij!</a>
+    </section>
+
+    <!-- Media -->
+    <section id="media" class="media">
+        <h2>Piotr Siegoczyński w mediach</h2>
+        <div class="media-grid">
+            <div class="media-item">
+                <a href="https://wojownicy-sport.pl/wywiad-z-piotrem-siegoczynskim-prezesem-polskiego-zwiazku-kickboxingu-2/"><img src="media1.jpg" alt="Wywiad w wojownicy-sport.pl"></a>
+                <p>Wywiad w „wojownicy-sport.pl”</p>
+            </div>
+            <div class="media-item">
+                <a href="https://przegladsportowy.onet.pl/piotr-siegoczynski"><img src="media2.jpg" alt="Relacja Przegląd Sportowy"></a>
+                <p>Relacja z Przeglądu Sportowego</p>
+            </div>
+            <div class="media-item">
+                <a href="https://www.polskieradio.pl/10/3961/artykul/1836137,jakie-czasy-czekaja-polski-kickboxing"><img src="media3.jpg" alt="polskieradio"></a>
+                <p>Rozmowa w "Polskie radio”</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact" class="contact">
+        <h2>Skontaktuj się ze mną</h2>
+        <p>Chcesz trenować, zaprosić mnie na wydarzenie lub podjąć współpracę? Napisz lub zadzwoń!</p>
+        <div class="contact-info">
+            <p>📩 <strong>E-mail:</strong> kontakt@piotrsiegoczynski.pl</p>
+            <p>📱 <strong>Telefon:</strong> +48 123 456 789</p>
+            <p>📍 <strong>Lokalizacja:</strong> Warszawa, Polska</p>
+        </div>
+        <form class="contact-form">
+            <input type="text" placeholder="Imię i nazwisko" required>
+            <input type="email" placeholder="Adres e-mail" required>
+            <input type="text" placeholder="Temat wiadomości" required>
+            <textarea placeholder="Treść wiadomości" required></textarea>
+            <button type="submit" class="btn">Wyślij</button>
+        </form>
+    </section>
+
+    <!-- Stopka -->
+    <footer>
+        <p>&copy; 2025 Piotr Siegoczyński. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
